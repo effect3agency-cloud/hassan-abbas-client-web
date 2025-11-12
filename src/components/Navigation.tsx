@@ -1,26 +1,13 @@
-import { NavLink } from "@/components/NavLink";
+import { useState } from "react";
 import { Instagram, Facebook, Youtube } from "lucide-react";
+import { Menu, MenuItem, HoveredLink } from "@/components/ui/navbar-menu";
 import logo from "@/assets/logo.jpg";
 
 const Navigation = () => {
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Sign Solutions", path: "/sign-solutions" },
-    { name: "Signs", path: "/signs" },
-    { name: "Installation", path: "/installation" },
-    { name: "Lighting", path: "/lighting" },
-    { name: "Services", path: "/services" },
-  ];
-
-  const secondRowLinks = [
-    { name: "Resources", path: "/resources" },
-    { name: "Service Areas", path: "/service-areas" },
-    { name: "About Us", path: "/about" },
-    { name: "Get In Touch", path: "/contact" },
-  ];
+  const [active, setActive] = useState<string | null>(null);
 
   return (
-    <nav className="bg-[#1a1a1a] text-white py-4 px-6">
+    <div className="bg-[#1a1a1a] text-white py-4 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Top Row: Social + Logo + Phone */}
         <div className="flex items-center justify-between mb-4">
@@ -51,38 +38,52 @@ const Navigation = () => {
           </a>
         </div>
 
-        {/* Navigation Links */}
-        <div className="flex flex-col items-center gap-2">
-          {/* First Row */}
-          <div className="flex gap-6">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className="text-white hover:text-accent transition-colors text-sm uppercase tracking-wide"
-                activeClassName="text-accent"
-              >
-                {link.name}
-              </NavLink>
-            ))}
-          </div>
+        {/* Animated Navigation Menu */}
+        <div className="flex justify-center">
+          <Menu setActive={setActive}>
+            <MenuItem setActive={setActive} active={active} item="Home">
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/">Home</HoveredLink>
+              </div>
+            </MenuItem>
+            
+            <MenuItem setActive={setActive} active={active} item="Sign Solutions">
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/sign-solutions">Sign Solutions</HoveredLink>
+                <HoveredLink href="/signs">Signs</HoveredLink>
+              </div>
+            </MenuItem>
 
-          {/* Second Row */}
-          <div className="flex gap-6">
-            {secondRowLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className="text-white hover:text-accent transition-colors text-sm uppercase tracking-wide"
-                activeClassName="text-accent"
-              >
-                {link.name}
-              </NavLink>
-            ))}
-          </div>
+            <MenuItem setActive={setActive} active={active} item="Services">
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/services">Services</HoveredLink>
+                <HoveredLink href="/installation">Installation</HoveredLink>
+                <HoveredLink href="/lighting">Lighting</HoveredLink>
+              </div>
+            </MenuItem>
+
+            <MenuItem setActive={setActive} active={active} item="Resources">
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/resources">Resources</HoveredLink>
+                <HoveredLink href="/service-areas">Service Areas</HoveredLink>
+              </div>
+            </MenuItem>
+
+            <MenuItem setActive={setActive} active={active} item="About Us">
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/about">About Us</HoveredLink>
+              </div>
+            </MenuItem>
+
+            <MenuItem setActive={setActive} active={active} item="Contact Us">
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/contact">Get In Touch</HoveredLink>
+              </div>
+            </MenuItem>
+          </Menu>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 
