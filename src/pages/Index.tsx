@@ -1,7 +1,13 @@
 import HeroSignboard from "@/components/HeroSignboard";
+import Navigation from "@/components/Navigation";
 
 const Index = () => {
-  return <HeroSignboard />;
+  return (
+    <>
+      <Navigation />
+      <HeroSignboard />
+    </>
+  );
 };
 
 export default Index;

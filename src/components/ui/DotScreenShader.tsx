@@ -110,21 +110,21 @@ function Scene() {
     switch (theme) {
       case 'dark':
         return {
-          dotColor: '#FFFFFF',
+          dotColor: '#de5b37',
           bgColor: '#121212',
           dotOpacity: 0.025
         }
       case 'light':
         return {
-          dotColor: '#e1e1e1',
+          dotColor: '#de5b37',
           bgColor: '#F4F5F5',
           dotOpacity: 0.15
         }
       default:
         return {
-          dotColor: '#FFFFFF',
-          bgColor: '#121212',
-          dotOpacity: 0.05
+          dotColor: '#de5b37',
+          bgColor: '#F4F5F5',
+          dotOpacity: 0.15
         }
     }
   }
