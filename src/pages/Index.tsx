@@ -1,8 +1,7 @@
+import HeroSignboard from "@/components/HeroSignboard";
+
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-black">
-    </div>
-  );
+  return <HeroSignboard />;
 };
 
 export default Index;
