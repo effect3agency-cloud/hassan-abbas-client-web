@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -90,8 +91,8 @@ export const ProductItem = ({
     <Link to={href} className="flex space-x-2">
       <img
         src={src}
-        width={140}
-        height={70}
+        width="140"
+        height="70"
         alt={title}
         className="flex-shrink-0 rounded-md shadow-2xl"
       />

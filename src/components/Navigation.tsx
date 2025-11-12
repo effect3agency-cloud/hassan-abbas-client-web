@@ -78,6 +78,7 @@ const Navigation = () => {
             <MenuItem setActive={setActive} active={active} item="Contact Us">
               <div className="flex flex-col space-y-4 text-sm">
                 <HoveredLink href="/contact">Get In Touch</HoveredLink>
+                <HoveredLink href="/quote">Request Quote</HoveredLink>
               </div>
             </MenuItem>
           </Menu>
