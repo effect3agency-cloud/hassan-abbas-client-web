@@ -1,6 +1,6 @@
 import HeroSignboard from "@/components/HeroSignboard";
 import Navigation from "@/components/Navigation";
-import Testimonials from "@/components/Testimonials";
+import TrustedBy from "@/components/TrustedBy";
 import showcaseImage from "@/assets/showcase-image.png";
 
 const Index = () => {
@@ -18,8 +18,8 @@ const Index = () => {
         />
       </section>
 
-      {/* Testimonials Section */}
-      <Testimonials />
+      {/* Trusted By Section */}
+      <TrustedBy />
     </div>
   );
 };
