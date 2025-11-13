@@ -1,9 +1,9 @@
 const Navigation = () => {
   const navItems = [
-    { title: "Home", href: "/" },
+    { title: "Home", href: "#" },
     { title: "Services", href: "#services" },
     { title: "Portfolio", href: "#portfolio" },
-    { title: "Resources", href: "#resources" },
+    { title: "Gallery", href: "#gallery" },
   ];
 
   return (
@@ -20,7 +20,7 @@ const Navigation = () => {
         ))}
         
         <a
-          href="#contact"
+          href="#contact-us"
           className="px-4 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-foreground hover:bg-gray-200 dark:hover:bg-gray-700 transition-all text-xs md:text-sm font-medium ml-2"
         >
           Get In Touch
