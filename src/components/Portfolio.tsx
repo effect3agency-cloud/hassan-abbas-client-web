@@ -8,8 +8,20 @@ import portfolio6 from "@/assets/portfolio-6.jpg";
 import portfolio7 from "@/assets/portfolio-7.jpg";
 import portfolio8 from "@/assets/portfolio-8.jpg";
 import portfolio9 from "@/assets/portfolio-9.jpg";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
+import { useRef } from "react";
 
 const Portfolio = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const handleSwipe = () => {
+    const carouselElement = carouselRef.current?.querySelector('[data-carousel-container]');
+    if (carouselElement) {
+      carouselElement.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
+
   const imageItems = [
     {
       id: 1,
@@ -78,27 +90,24 @@ const Portfolio = () => {
 
   return (
     <div className="relative">
-      <InteractiveImageBentoGallery
-        imageItems={imageItems}
-        title="Our Portfolio"
-        description="Explore our diverse range of signage projects across Texas. From storefront signs to monument displays, each project showcases our commitment to quality and attention to detail."
-      />
-      {/* Swipe Indicator */}
-      <div className="absolute top-24 right-8 hidden md:flex items-center gap-2 text-muted-foreground animate-pulse">
-        <span className="text-sm font-medium">Swipe to explore</span>
-        <svg 
-          className="w-6 h-6" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
+      <div ref={carouselRef}>
+        <InteractiveImageBentoGallery
+          imageItems={imageItems}
+          title="Our Portfolio"
+          description="Explore our diverse range of signage projects across Texas. From storefront signs to monument displays, each project showcases our commitment to quality and attention to detail."
+        />
+      </div>
+      
+      {/* Swipe Button */}
+      <div className="w-full flex justify-center mt-8 pb-8">
+        <Button 
+          onClick={handleSwipe}
+          className="group flex items-center gap-2 px-6 py-3 text-base font-semibold"
+          size="lg"
         >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M13 7l5 5m0 0l-5 5m5-5H6" 
-          />
-        </svg>
+          Swipe to explore more
+          <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+        </Button>
       </div>
     </div>
   );
