@@ -20,7 +20,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
           <div className="inline-block px-3 py-1 mb-4 text-sm border rounded-full border-accent text-accent">
             Our Work
           </div>
-          <h2 className="text-3xl font-semibold text-accent">Our Latest Work</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-accent">Our Latest Work</h2>
           <p className="text-sm text-muted-foreground mt-2">
             At Precision Signs, we take pride in delivering high-quality signage solutions that help businesses stand out. As a leading signage company in Houston Texas, we've worked with a wide range of clients from local shops to large corporations creating impactful signs that grab attention and leave a lasting impression.
           </p>
