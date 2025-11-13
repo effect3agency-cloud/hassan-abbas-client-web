@@ -1,6 +1,7 @@
 import HeroSignboard from "@/components/HeroSignboard";
 import Navigation from "@/components/Navigation";
 import Testimonials from "@/components/Testimonials";
+import Gallery from "@/components/Gallery";
 import showcaseImage from "@/assets/showcase-image.png";
 
 const Index = () => {
@@ -20,6 +21,9 @@ const Index = () => {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Gallery Section */}
+      <Gallery />
     </div>
   );
 };
