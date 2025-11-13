@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
 import CTASection from "@/components/CTASection";
+import Services from "@/components/Services";
 import showcaseImage from "@/assets/showcase-image.png";
 
 const Index = () => {
@@ -28,6 +29,9 @@ const Index = () => {
 
       {/* Gallery Section */}
       <Gallery />
+
+      {/* Services Section */}
+      <Services />
     </div>
   );
 };
