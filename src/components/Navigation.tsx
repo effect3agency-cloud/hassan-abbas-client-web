@@ -9,7 +9,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[1200px]">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
       <div className="flex gap-4 sm:gap-6 md:gap-8 justify-center rounded-xl md:rounded-2xl px-6 md:px-8 py-3 md:py-4 border-2 border-orange-500 bg-white/10 backdrop-blur-[20px] shadow-[0_0_25px_rgba(249,115,22,0.25)] transition-all hover:shadow-[0_0_35px_rgba(249,115,22,0.5)]">
         {navItems.map((item, idx) => (
           <a

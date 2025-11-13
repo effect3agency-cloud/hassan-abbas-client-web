@@ -32,35 +32,7 @@ const testimonials = [
     name: "Amanda Lee",
     role: "Capriotti's Marketing Director",
   },
-  {
-    text: "Fast turnaround on our gym signage without compromising quality. Their customer service is top-notch.",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-    name: "Rachel Martinez",
-    role: "Sport Fitness Operations Manager",
-  },
-  {
-    text: "Custom dimensional letters and interior signs that perfectly match our brand guidelines. Excellent craftsmanship.",
-    image: "https://randomuser.me/api/portraits/men/7.jpg",
-    name: "James Wilson",
-    role: "Retail Store Manager",
-  },
-  {
-    text: "They handled our complete wayfinding system with precision. Professional installation and stunning results.",
-    image: "https://randomuser.me/api/portraits/women/8.jpg",
-    name: "Lisa Anderson",
-    role: "Property Manager",
-  },
-  {
-    text: "Best sign company we've worked with. LED displays and digital signage solutions that drive customer engagement.",
-    image: "https://randomuser.me/api/portraits/men/9.jpg",
-    name: "Robert Kim",
-    role: "Business Development Director",
-  },
 ];
-
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
 
 const Testimonials = () => {
   return (
@@ -86,7 +58,7 @@ const Testimonials = () => {
         </motion.div>
 
         <div className="flex justify-start gap-6 mt-10 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] overflow-hidden">
-          <TestimonialsColumn testimonials={[...firstColumn, ...secondColumn, ...thirdColumn]} duration={30} />
+          <TestimonialsColumn testimonials={testimonials} duration={25} />
         </div>
       </div>
     </section>
