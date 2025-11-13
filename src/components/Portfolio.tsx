@@ -13,13 +13,16 @@ import { ChevronRight } from "lucide-react";
 import { useRef } from "react";
 
 const Portfolio = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const swipeFunction = useRef<(() => void) | null>(null);
 
   const handleSwipe = () => {
-    const carouselElement = carouselRef.current?.querySelector('[data-carousel-container]');
-    if (carouselElement) {
-      carouselElement.scrollBy({ left: 400, behavior: 'smooth' });
+    if (swipeFunction.current) {
+      swipeFunction.current();
     }
+  };
+
+  const registerSwipe = (fn: () => void) => {
+    swipeFunction.current = fn;
   };
 
   const imageItems = [
@@ -90,13 +93,12 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className="relative">
-      <div ref={carouselRef}>
-        <InteractiveImageBentoGallery
-          imageItems={imageItems}
-          title="Our Portfolio"
-          description="Explore our diverse range of signage projects across Texas. From storefront signs to monument displays, each project showcases our commitment to quality and attention to detail."
-        />
-      </div>
+      <InteractiveImageBentoGallery
+        imageItems={imageItems}
+        title="Our Portfolio"
+        description="Explore our diverse range of signage projects across Texas. From storefront signs to monument displays, each project showcases our commitment to quality and attention to detail."
+        onSwipeRef={registerSwipe}
+      />
       
       {/* Swipe Button */}
       <div className="w-full flex justify-center mt-8 pb-8">
