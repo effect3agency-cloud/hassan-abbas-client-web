@@ -106,8 +106,9 @@ export default function CTAWithHorizontalMarquee({
   }, []);
 
   return (
-    <div className="w-full bg-background text-foreground flex items-center justify-center px-6 py-20 overflow-hidden">
-      <div className="w-full animate-fade-in-up">
+    <div className="w-full bg-background text-foreground flex items-center justify-center px-6 py-20 overflow-hidden relative">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url(/src/assets/signboard-texture.jpg)', backgroundSize: '600px 600px', backgroundRepeat: 'repeat' }}></div>
+      <div className="w-full animate-fade-in-up relative z-10">
         <div className="flex flex-col gap-12 lg:gap-16">
           {/* Top Content */}
           <div className="space-y-8 max-w-3xl mx-auto text-center px-6">

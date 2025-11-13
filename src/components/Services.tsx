@@ -42,8 +42,9 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full flex flex-col items-center justify-start py-12 px-4">
-      <div className="max-w-3xl text-center mb-12">
+    <section className="w-full flex flex-col items-center justify-start py-12 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url(/src/assets/signboard-texture.jpg)', backgroundSize: '600px 600px', backgroundRepeat: 'repeat' }}></div>
+      <div className="max-w-3xl text-center mb-12 relative z-10">
         <div className="inline-block px-3 py-1 mb-4 text-sm border rounded-full border-accent text-accent">
           Services
         </div>
@@ -52,7 +53,7 @@ const Services = () => {
         </h2>
       </div>
 
-      <div className="w-full max-w-7xl px-12">
+      <div className="w-full max-w-7xl px-12 relative z-10">
         <Carousel
           opts={{
             align: "start",

@@ -15,8 +15,9 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
         }
       `}</style>
 
-      <section className="w-full flex flex-col items-center justify-start py-12">
-        <div className="max-w-3xl text-center px-4">
+      <section className="w-full flex flex-col items-center justify-start py-12 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url(/src/assets/signboard-texture.jpg)', backgroundSize: '600px 600px', backgroundRepeat: 'repeat' }}></div>
+        <div className="max-w-3xl text-center px-4 relative z-10">
           <div className="inline-block px-3 py-1 mb-4 text-sm border rounded-full border-accent text-accent">
             Our Work
           </div>
@@ -26,7 +27,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 h-[400px] w-full max-w-5xl mt-10 px-4">
+        <div className="flex items-center gap-2 h-[400px] w-full max-w-5xl mt-10 px-4 relative z-10">
           {images.map((src, idx) => (
             <div
               key={idx}
