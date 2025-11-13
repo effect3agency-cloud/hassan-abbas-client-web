@@ -7,7 +7,7 @@ const OurStory = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-primary">
               Our Story
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">

@@ -9,14 +9,81 @@ import Portfolio from "@/components/Portfolio";
 import OurStory from "@/components/OurStory";
 import { UpgradeBanner } from "@/components/ui/upgrade-banner";
 import showcaseImage from "@/assets/showcase-image.png";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
+
+function Grid3D() {
+  const gridRef = useRef<THREE.Group>(null);
+
+  useFrame(() => {
+    if (gridRef.current) {
+      gridRef.current.position.z += 0.01;
+      if (gridRef.current.position.z > 5) {
+        gridRef.current.position.z = -10;
+      }
+    }
+  });
+
+  const gridSize = 20;
+  const gridSpacing = 1;
+  const lines = [];
+
+  for (let i = -gridSize / 2; i <= gridSize / 2; i++) {
+    const points = [];
+    for (let j = -15; j <= 5; j++) {
+      points.push(new THREE.Vector3(i * gridSpacing, j * 0.5, j * gridSpacing));
+    }
+    lines.push(points);
+  }
+
+  for (let j = -15; j <= 5; j += 2) {
+    const points = [];
+    for (let i = -gridSize / 2; i <= gridSize / 2; i++) {
+      points.push(new THREE.Vector3(i * gridSpacing, j * 0.5, j * gridSpacing));
+    }
+    lines.push(points);
+  }
+
+  return (
+    <group ref={gridRef} rotation={[0, 0, 0]}>
+      {lines.map((points, index) => {
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const material = new THREE.LineBasicMaterial({
+          color: "#f97316",
+          opacity: 0.25,
+          transparent: true,
+        });
+        const line = new THREE.Line(geometry, material);
+        return <primitive key={index} object={line} />;
+      })}
+    </group>
+  );
+}
 
 const Index = () => {
   const [showBanner, setShowBanner] = useState(true);
   
   return (
     <div className="relative">
-      {showBanner && (
+      {/* Global 3D Grid Background */}
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
+        <div className="absolute inset-0 w-full h-full">
+          <Canvas
+            camera={{ position: [0, 3, 8], fov: 75 }}
+            style={{ background: "transparent" }}
+          >
+            <ambientLight intensity={0.5} />
+            <Grid3D />
+            <fog attach="fog" args={["#ffffff", 5, 15]} />
+          </Canvas>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80 pointer-events-none" />
+        </div>
+      </div>
+      
+      {/* Content with higher z-index */}
+      <div className="relative z-10">
+        {showBanner && (
         <div className="w-full bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/30 border-b-2 border-orange-200 dark:border-orange-800">
           <UpgradeBanner 
             buttonText="Black Friday Season Sale:"
@@ -57,6 +124,7 @@ const Index = () => {
 
       {/* Portfolio Section */}
       <Portfolio />
+      </div>
     </div>
   );
 };
