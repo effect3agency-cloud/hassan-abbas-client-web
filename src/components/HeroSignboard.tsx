@@ -1,5 +1,4 @@
 import { DotScreenShader } from "@/components/ui/DotScreenShader";
-import GridBackground3D from "@/components/ui/GridBackground3D";
 import { useState, useEffect } from "react";
 
 const HeroSignboard = () => {
@@ -31,7 +30,6 @@ const HeroSignboard = () => {
       <div className="absolute inset-0">
         <DotScreenShader />
       </div>
-      <GridBackground3D />
       <div className="relative z-10 flex flex-col items-center justify-center max-w-5xl mx-auto space-y-8">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black text-center leading-tight pointer-events-none">
           Helping Texas Businesses Stand Out{" "}
