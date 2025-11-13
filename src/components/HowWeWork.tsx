@@ -7,9 +7,6 @@ const HowWeWork = () => {
         <div className="inline-block px-3 py-1 mb-4 text-sm border rounded-full border-accent text-accent">
           Process
         </div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-accent">
-          How We Work
-        </h2>
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl w-full">
@@ -22,6 +19,9 @@ const HowWeWork = () => {
           />
         </div>
         <div className="text-sm text-foreground max-w-lg">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-accent mb-6">
+            How We Work
+          </h2>
           <p className="mt-4">
             At Precision Media & Signs, we combine cutting edge technology with expert craftsmanship to deliver exceptional signage solutions. From initial design concepts to final installation, our streamlined process ensures quality results that exceed expectations.
           </p>
