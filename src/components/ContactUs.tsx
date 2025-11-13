@@ -33,6 +33,11 @@ const ContactUs = () => {
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Badge variant="default" className="bg-primary text-primary-foreground border-primary">
+              Contact Us
+            </Badge>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Get In Touch
           </h2>

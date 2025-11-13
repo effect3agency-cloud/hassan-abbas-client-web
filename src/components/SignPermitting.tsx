@@ -9,7 +9,7 @@ const SignPermitting = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Badge variant="default" className="bg-primary text-primary-foreground">
+            <Badge variant="default" className="bg-primary text-primary-foreground border-primary">
               Premium Service
             </Badge>
           </div>
