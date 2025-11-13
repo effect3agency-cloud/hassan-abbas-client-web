@@ -10,7 +10,7 @@ const Navigation = () => {
   ];
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+    <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
       <Dock>
         {navItems.map((item) => (
           <DockItem key={item.title}>
