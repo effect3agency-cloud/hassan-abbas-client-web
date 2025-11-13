@@ -10,6 +10,7 @@ import OurStory from "@/components/OurStory";
 import PremiumServices from "@/components/PremiumServices";
 import SignPermitting from "@/components/SignPermitting";
 import ContactUs from "@/components/ContactUs";
+import Footer from "@/components/Footer";
 import { UpgradeBanner } from "@/components/ui/upgrade-banner";
 import showcaseImage from "@/assets/showcase-image.png";
 import { useState } from "react";
@@ -127,6 +128,9 @@ const Index = () => {
 
       {/* Contact Us Section */}
       <ContactUs />
+
+      {/* Footer Section */}
+      <Footer />
       </div>
     </div>
   );

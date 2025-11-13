@@ -89,7 +89,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="relative">
+    <section id="portfolio" className="relative">
       <div ref={carouselRef}>
         <InteractiveImageBentoGallery
           imageItems={imageItems}
@@ -109,7 +109,7 @@ const Portfolio = () => {
           <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
         </Button>
       </div>
-    </div>
+    </section>
   );
 };
 
