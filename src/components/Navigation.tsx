@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Menu, MenuItem, HoveredLink } from "@/components/ui/navbar-menu";
-import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.jpg";
 
 const Navigation = () => {
@@ -8,33 +7,11 @@ const Navigation = () => {
 
   return (
     <div className="fixed top-10 inset-x-0 max-w-5xl mx-auto z-50 px-4">
-      <div className="flex items-center justify-between mb-4">
-        {/* Logo */}
-        <img src={logo} alt="Precision Media & Signs" className="h-16 w-auto" />
-        
-        {/* Phone */}
-        <a
-          href="tel:832-970-2805"
-          className="bg-[#2c5aa0] hover:bg-[#234880] px-6 py-3 rounded-lg text-lg font-semibold text-white transition-colors"
-        >
-          832-970-2805
-        </a>
+      <div className="flex items-center justify-center mb-4">
+        <img src={logo} alt="Precision Media & Signs" className="h-20 w-auto object-contain" style={{ background: 'transparent' }} />
       </div>
 
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Home">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/">Home</HoveredLink>
-          </div>
-        </MenuItem>
-        
-        <MenuItem setActive={setActive} active={active} item="Sign Solutions">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/sign-solutions">Sign Solutions</HoveredLink>
-            <HoveredLink href="/signs">Signs</HoveredLink>
-          </div>
-        </MenuItem>
-
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/services">Services</HoveredLink>
@@ -43,16 +20,18 @@ const Navigation = () => {
           </div>
         </MenuItem>
 
-        <MenuItem setActive={setActive} active={active} item="Resources">
+        <MenuItem setActive={setActive} active={active} item="Our Work">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/resources">Resources</HoveredLink>
-            <HoveredLink href="/service-areas">Service Areas</HoveredLink>
+            <HoveredLink href="/portfolio">Portfolio</HoveredLink>
+            <HoveredLink href="/case-studies">Case Studies</HoveredLink>
+            <HoveredLink href="/testimonials">Testimonials</HoveredLink>
           </div>
         </MenuItem>
 
-        <MenuItem setActive={setActive} active={active} item="About Us">
+        <MenuItem setActive={setActive} active={active} item="Pricing">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/about">About Us</HoveredLink>
+            <HoveredLink href="/pricing">View Pricing</HoveredLink>
+            <HoveredLink href="/quote">Request Quote</HoveredLink>
           </div>
         </MenuItem>
 
