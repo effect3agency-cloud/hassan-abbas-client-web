@@ -26,11 +26,11 @@ const HeroSignboard = () => {
   }, [currentIndex, isDeleting]);
 
   return (
-    <div className="min-h-screen w-screen flex flex-col items-center justify-center relative px-6 pt-32">
+    <div className="min-h-screen w-screen flex flex-col items-center justify-center relative px-6 pt-24">
       <div className="absolute inset-0">
         <DotScreenShader />
       </div>
-      <div className="relative z-10 flex flex-col items-center justify-center max-w-5xl mx-auto space-y-12">
+      <div className="relative z-10 flex flex-col items-center justify-center max-w-5xl mx-auto space-y-8">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black text-center leading-tight pointer-events-none">
           Helping Texas Businesses Stand Out{" "}
           <span className="inline-block min-w-[240px] text-left text-orange-500">
