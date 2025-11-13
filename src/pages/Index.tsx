@@ -8,6 +8,7 @@ import HowWeWork from "@/components/HowWeWork";
 import Portfolio from "@/components/Portfolio";
 import OurStory from "@/components/OurStory";
 import PremiumServices from "@/components/PremiumServices";
+import SignPermitting from "@/components/SignPermitting";
 import { UpgradeBanner } from "@/components/ui/upgrade-banner";
 import showcaseImage from "@/assets/showcase-image.png";
 import { useState } from "react";
@@ -119,6 +120,9 @@ const Index = () => {
 
       {/* Premium Services Section */}
       <PremiumServices />
+
+      {/* Sign Permitting Section */}
+      <SignPermitting />
       </div>
     </div>
   );
