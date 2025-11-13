@@ -54,14 +54,14 @@ function HorizontalMarquee({
 }
 
 const marqueeItems = [
-  "Channel Letters",
-  "Monument Signs",
-  "Pylon Signs",
-  "LED Displays",
-  "Window Graphics",
-  "Vehicle Wraps",
-  "Wayfinding",
-  "Custom Fabrication",
+  "Design",
+  "Manufacturing",
+  "Installation",
+  "Lighting",
+  "Sub Contractor",
+  "Service",
+  "Architect",
+  "AI marketing",
 ];
 
 interface CTAWithHorizontalMarqueeProps {
