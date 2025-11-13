@@ -1,10 +1,23 @@
 import permitInspection from "@/assets/permit-inspection.jpg";
 import permitProcessing from "@/assets/permit-processing.jpg";
+import { Badge } from "@/components/ui/badge";
 
 const SignPermitting = () => {
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-gradient-to-b from-background to-muted/20">
+    <section id="sign-permitting" className="w-full py-16 md:py-24 px-6 bg-gradient-to-b from-background to-muted/20">
       <div className="mx-auto max-w-7xl">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Badge variant="default" className="bg-primary text-primary-foreground">
+              Premium Service
+            </Badge>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
+            Why Choose Us?
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Images */}
           <div className="relative flex items-center justify-center gap-6">
@@ -53,26 +66,45 @@ const SignPermitting = () => {
               </p>
             </div>
 
-            {/* Decorative Arrow */}
-            <div className="hidden lg:block">
-              <svg 
-                className="w-24 h-24 text-[#C84B31]" 
-                viewBox="0 0 100 100" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path 
-                  d="M20 10 Q 10 30, 25 50 T 40 90" 
-                  stroke="currentColor" 
-                  strokeWidth="4" 
-                  strokeLinecap="round"
-                  fill="none"
-                />
-                <path 
-                  d="M30 85 L 40 90 L 35 80" 
-                  fill="currentColor"
-                />
-              </svg>
+            {/* Decorative Arrow - Points to contact section */}
+            <div className="hidden lg:block mt-8">
+              <a href="#contact-us" className="inline-block group">
+                <svg 
+                  className="w-32 h-32 text-primary group-hover:text-primary/80 transition-colors animate-bounce" 
+                  viewBox="0 0 100 120" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Curved arrow path */}
+                  <path 
+                    d="M50 10 L50 90" 
+                    stroke="currentColor" 
+                    strokeWidth="4" 
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                  {/* Arrow head */}
+                  <path 
+                    d="M35 75 L50 90 L65 75" 
+                    stroke="currentColor" 
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                  {/* Contact text hint */}
+                  <text 
+                    x="50" 
+                    y="110" 
+                    textAnchor="middle" 
+                    fill="currentColor" 
+                    fontSize="12" 
+                    fontWeight="600"
+                  >
+                    Contact Us
+                  </text>
+                </svg>
+              </a>
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ import Portfolio from "@/components/Portfolio";
 import OurStory from "@/components/OurStory";
 import PremiumServices from "@/components/PremiumServices";
 import SignPermitting from "@/components/SignPermitting";
+import ContactUs from "@/components/ContactUs";
 import { UpgradeBanner } from "@/components/ui/upgrade-banner";
 import showcaseImage from "@/assets/showcase-image.png";
 import { useState } from "react";
@@ -123,6 +124,9 @@ const Index = () => {
 
       {/* Sign Permitting Section */}
       <SignPermitting />
+
+      {/* Contact Us Section */}
+      <ContactUs />
       </div>
     </div>
   );
