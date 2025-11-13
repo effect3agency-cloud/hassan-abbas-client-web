@@ -46,11 +46,11 @@ const Testimonials = () => {
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
           <div className="flex justify-center">
-            <div className="border-2 border-orange-500 py-1 px-4 rounded-lg text-orange-600 dark:text-orange-400">Our Client</div>
+            <div className="border py-1 px-4 rounded-lg">Our Client</div>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5 text-orange-600 dark:text-orange-400">
-            What Our Clients Say
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
+            What our clients say
           </h2>
           <p className="text-center mt-5 opacity-75">
             See what our customers have to say about our signage services.
