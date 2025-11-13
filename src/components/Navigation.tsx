@@ -1,47 +1,28 @@
-import { useState } from "react";
-import { Menu, MenuItem, HoveredLink } from "@/components/ui/navbar-menu";
-import logo from "@/assets/logo.jpg";
+import { Dock, DockItem, DockLabel, DockIcon } from "@/components/ui/dock";
+import { Briefcase, FolderOpen, DollarSign, Mail } from "lucide-react";
 
 const Navigation = () => {
-  const [active, setActive] = useState<string | null>(null);
+  const navItems = [
+    { title: "Services", icon: Briefcase, href: "/services" },
+    { title: "Our Work", icon: FolderOpen, href: "/our-work" },
+    { title: "Pricing", icon: DollarSign, href: "/pricing" },
+    { title: "Contact Us", icon: Mail, href: "/contact" },
+  ];
 
   return (
-    <div className="fixed top-10 inset-x-0 max-w-5xl mx-auto z-50 px-4">
-      <div className="flex items-center justify-center mb-4">
-        <img src={logo} alt="Precision Media & Signs" className="h-20 w-auto object-contain" style={{ background: 'transparent' }} />
-      </div>
-
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/services">Services</HoveredLink>
-            <HoveredLink href="/installation">Installation</HoveredLink>
-            <HoveredLink href="/lighting">Lighting</HoveredLink>
-          </div>
-        </MenuItem>
-
-        <MenuItem setActive={setActive} active={active} item="Our Work">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/portfolio">Portfolio</HoveredLink>
-            <HoveredLink href="/case-studies">Case Studies</HoveredLink>
-            <HoveredLink href="/testimonials">Testimonials</HoveredLink>
-          </div>
-        </MenuItem>
-
-        <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/pricing">View Pricing</HoveredLink>
-            <HoveredLink href="/quote">Request Quote</HoveredLink>
-          </div>
-        </MenuItem>
-
-        <MenuItem setActive={setActive} active={active} item="Contact Us">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/contact">Get In Touch</HoveredLink>
-            <HoveredLink href="/quote">Request Quote</HoveredLink>
-          </div>
-        </MenuItem>
-      </Menu>
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+      <Dock>
+        {navItems.map((item) => (
+          <DockItem key={item.title}>
+            <DockLabel>{item.title}</DockLabel>
+            <DockIcon>
+              <a href={item.href} className="flex items-center justify-center h-full w-full">
+                <item.icon className="h-5 w-5 text-orange-600 dark:text-orange-400" />
+              </a>
+            </DockIcon>
+          </DockItem>
+        ))}
+      </Dock>
     </div>
   );
 };
