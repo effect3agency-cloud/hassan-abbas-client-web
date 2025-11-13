@@ -105,6 +105,31 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background-image: url('/src/assets/signboard-texture.jpg');
+    background-size: 600px 600px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    opacity: 1;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/src/assets/signboard-texture.jpg') repeat;
+    background-size: 600px 600px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  body > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
