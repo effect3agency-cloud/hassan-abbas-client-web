@@ -20,20 +20,20 @@ function Grid3D() {
   const gridSpacing = 1;
   const lines = [];
 
-  // Create vertical lines
+  // Create vertical lines coming from top
   for (let i = -gridSize / 2; i <= gridSize / 2; i++) {
     const points = [];
-    for (let j = -10; j <= 5; j++) {
-      points.push(new THREE.Vector3(i * gridSpacing, -3, j * gridSpacing));
+    for (let j = -15; j <= 5; j++) {
+      points.push(new THREE.Vector3(i * gridSpacing, j * 0.5, j * gridSpacing));
     }
     lines.push(points);
   }
 
-  // Create horizontal lines
-  for (let j = -10; j <= 5; j++) {
+  // Create horizontal lines (fewer)
+  for (let j = -15; j <= 5; j += 2) {
     const points = [];
     for (let i = -gridSize / 2; i <= gridSize / 2; i++) {
-      points.push(new THREE.Vector3(i * gridSpacing, -3, j * gridSpacing));
+      points.push(new THREE.Vector3(i * gridSpacing, j * 0.5, j * gridSpacing));
     }
     lines.push(points);
   }
@@ -44,7 +44,7 @@ function Grid3D() {
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
         const material = new THREE.LineBasicMaterial({
           color: "#f97316",
-          opacity: 0.5,
+          opacity: 0.25,
           transparent: true,
         });
         const line = new THREE.Line(geometry, material);
@@ -58,13 +58,13 @@ export default function GridBackground3D() {
   return (
     <div className="absolute inset-0 w-full h-full pointer-events-none">
       <Canvas
-        camera={{ position: [0, 2, 5], fov: 75 }}
+        camera={{ position: [0, 3, 8], fov: 75 }}
         style={{ background: "transparent" }}
       >
         <ambientLight intensity={0.5} />
         <Grid3D />
         {/* Add fog to create blur effect towards the front */}
-        <fog attach="fog" args={["#000000", 3, 10]} />
+        <fog attach="fog" args={["#ffffff", 5, 15]} />
       </Canvas>
       {/* Gradient overlay for additional blur effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
