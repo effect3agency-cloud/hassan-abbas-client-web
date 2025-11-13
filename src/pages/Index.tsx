@@ -9,26 +9,16 @@ import Portfolio from "@/components/Portfolio";
 import OurStory from "@/components/OurStory";
 import { UpgradeBanner } from "@/components/ui/upgrade-banner";
 import showcaseImage from "@/assets/showcase-image.png";
-import { useState, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useState } from "react";
+import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 
 function Grid3D() {
-  const gridRef = useRef<THREE.Group>(null);
-
-  useFrame(() => {
-    if (gridRef.current) {
-      gridRef.current.position.z += 0.01;
-      if (gridRef.current.position.z > 5) {
-        gridRef.current.position.z = -10;
-      }
-    }
-  });
-
   const gridSize = 20;
   const gridSpacing = 1;
   const lines = [];
 
+  // Create vertical lines coming from top
   for (let i = -gridSize / 2; i <= gridSize / 2; i++) {
     const points = [];
     for (let j = -15; j <= 5; j++) {
@@ -37,6 +27,7 @@ function Grid3D() {
     lines.push(points);
   }
 
+  // Create horizontal lines
   for (let j = -15; j <= 5; j += 2) {
     const points = [];
     for (let i = -gridSize / 2; i <= gridSize / 2; i++) {
@@ -46,7 +37,7 @@ function Grid3D() {
   }
 
   return (
-    <group ref={gridRef} rotation={[0, 0, 0]}>
+    <group rotation={[0, 0, 0]}>
       {lines.map((points, index) => {
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
         const material = new THREE.LineBasicMaterial({
