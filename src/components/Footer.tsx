@@ -50,18 +50,18 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-2 pt-2">
               <div className="flex items-start gap-2 text-sm text-white/90">
-                <MapPin className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
+                <MapPin className="h-4 w-4 mt-0.5 text-orange-500 flex-shrink-0" />
                 <span>Texas, United States</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-white/90">
-                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <a href="tel:8329702805" className="hover:text-primary transition-colors">
+                <Phone className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                <a href="tel:8329702805" className="hover:text-orange-500 transition-colors">
                   832 970-2805
                 </a>
               </div>
               <div className="flex items-center gap-2 text-sm text-white/90">
-                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <a href="mailto:Habbas7725@gmail.com" className="hover:text-primary transition-colors">
+                <Mail className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                <a href="mailto:Habbas7725@gmail.com" className="hover:text-orange-500 transition-colors">
                   Habbas7725@gmail.com
                 </a>
               </div>
@@ -76,7 +76,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/90 hover:text-primary transition-colors inline-block"
+                    className="text-sm text-white/90 hover:text-orange-500 transition-colors inline-block"
                   >
                     {link.name}
                   </a>
@@ -93,7 +93,7 @@ const Footer = () => {
                 <li key={service.name}>
                   <a
                     href={service.href}
-                    className="text-sm text-white/90 hover:text-primary transition-colors inline-block"
+                    className="text-sm text-white/90 hover:text-orange-500 transition-colors inline-block"
                   >
                     {service.name}
                   </a>
@@ -117,10 +117,10 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-gray-700 border border-gray-600 hover:bg-primary transition-all hover:scale-110 hover:shadow-md"
+                    className="p-2 rounded-lg bg-gray-700 border border-gray-600 hover:bg-orange-500 transition-all hover:scale-110 hover:shadow-md group"
                     aria-label={social.name}
                   >
-                    <Icon className="h-5 w-5 text-primary hover:text-white" />
+                    <Icon className="h-5 w-5 text-orange-500 group-hover:text-white transition-colors" />
                   </a>
                 );
               })}
@@ -135,10 +135,10 @@ const Footer = () => {
               © {currentYear} Precision Media & Signs. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-white/80 hover:text-primary transition-colors">
+              <a href="#" className="text-sm text-white/80 hover:text-orange-500 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-white/80 hover:text-primary transition-colors">
+              <a href="#" className="text-sm text-white/80 hover:text-orange-500 transition-colors">
                 Terms of Service
               </a>
             </div>
