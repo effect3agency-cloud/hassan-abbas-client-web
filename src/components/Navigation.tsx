@@ -11,13 +11,13 @@ const Navigation = () => {
 
   return (
     <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
-      <Dock>
-        {navItems.map((item) => (
-          <DockItem key={item.title}>
+      <Dock className="items-end pb-3">
+        {navItems.map((item, idx) => (
+          <DockItem key={idx}>
             <DockLabel>{item.title}</DockLabel>
             <DockIcon>
               <a href={item.href} className="flex items-center justify-center h-full w-full">
-                <item.icon className="h-5 w-5 text-orange-600 dark:text-orange-400" />
+                <item.icon className="h-full w-full text-orange-600 dark:text-orange-400" />
               </a>
             </DockIcon>
           </DockItem>
