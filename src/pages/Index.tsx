@@ -10,14 +10,12 @@ const Index = () => {
       <HeroSignboard />
       
       {/* Image Section */}
-      <section className="w-full px-6 mt-12">
-        <div className="max-w-7xl mx-auto">
-          <img 
-            src={showcaseImage} 
-            alt="Precision Media & Signs - Gateway Commons Showcase" 
-            className="w-full h-auto rounded-xl shadow-2xl"
-          />
-        </div>
+      <section className="w-full">
+        <img 
+          src={showcaseImage} 
+          alt="Precision Media & Signs - Gateway Commons Showcase" 
+          className="w-full h-auto object-cover"
+        />
       </section>
     </div>
   );
