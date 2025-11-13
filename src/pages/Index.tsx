@@ -1,6 +1,6 @@
 import HeroSignboard from "@/components/HeroSignboard";
 import Navigation from "@/components/Navigation";
-import CurvedLoop from "@/components/CurvedLoop";
+import TrustedBy from "@/components/TrustedBy";
 import showcaseImage from "@/assets/showcase-image.png";
 
 const Index = () => {
@@ -17,6 +17,9 @@ const Index = () => {
           className="w-full h-auto object-cover"
         />
       </section>
+
+      {/* Trusted By Section */}
+      <TrustedBy />
     </div>
   );
 };
