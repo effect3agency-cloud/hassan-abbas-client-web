@@ -4,6 +4,7 @@ import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
 import CTASection from "@/components/CTASection";
 import Services from "@/components/Services";
+import HowWeWork from "@/components/HowWeWork";
 import showcaseImage from "@/assets/showcase-image.png";
 
 const Index = () => {
@@ -32,6 +33,9 @@ const Index = () => {
 
       {/* Services Section */}
       <Services />
+
+      {/* How We Work Section */}
+      <HowWeWork />
     </div>
   );
 };
