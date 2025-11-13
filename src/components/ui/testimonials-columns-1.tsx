@@ -16,7 +16,7 @@ export const TestimonialsColumn = (props: {
     <div className={props.className}>
       <motion.div
         animate={{
-          translateY: "-50%",
+          translateX: "-50%",
         }}
         transition={{
           duration: props.duration || 10,
@@ -24,7 +24,7 @@ export const TestimonialsColumn = (props: {
           ease: "linear",
           repeatType: "loop",
         }}
-        className="flex flex-col gap-6 pb-6 bg-background"
+        className="flex flex-row gap-6 pr-6 bg-background"
       >
         {[
           ...new Array(2).fill(0).map((_, index) => (
