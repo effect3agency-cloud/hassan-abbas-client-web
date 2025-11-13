@@ -29,7 +29,7 @@ const ContactUs = () => {
   ];
 
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-background">
+    <section id="contact-us" className="w-full py-16 md:py-24 px-6 bg-background">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12">
