@@ -39,7 +39,7 @@ const Footer = () => {
                 alt="Precision Media & Signs Logo" 
                 className="h-12 w-12 rounded-lg object-cover"
               />
-              <h3 className="text-xl font-bold text-primary">
+              <h3 className="text-xl font-bold text-orange-500">
                 Precision Signs
               </h3>
             </div>
@@ -70,7 +70,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-primary mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-orange-500 mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -87,7 +87,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold text-primary mb-4">Our Services</h4>
+            <h4 className="text-lg font-semibold text-orange-500 mb-4">Our Services</h4>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.name}>
@@ -104,7 +104,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h4 className="text-lg font-semibold text-primary mb-4">Connect With Us</h4>
+            <h4 className="text-lg font-semibold text-orange-500 mb-4">Connect With Us</h4>
             <p className="text-sm text-white/90 mb-4">
               Follow us on social media for updates and inspiration.
             </p>
