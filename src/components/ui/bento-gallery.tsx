@@ -22,6 +22,7 @@ interface InteractiveImageBentoGalleryProps {
   imageItems: ImageItem[]
   title: string
   description: string
+  onSwipeRef?: (swipeFn: () => void) => void
 }
 
 const containerVariants = {
@@ -84,12 +85,23 @@ const ImageModal = ({
 
 const InteractiveImageBentoGallery: React.FC<
   InteractiveImageBentoGalleryProps
-> = ({ imageItems, title, description }) => {
+> = ({ imageItems, title, description, onSwipeRef }) => {
   const [selectedItem, setSelectedItem] = useState<ImageItem | null>(null)
   const [dragConstraint, setDragConstraint] = useState(0)
+  const [dragX, setDragX] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const gridRef = useRef<HTMLDivElement>(null)
   const targetRef = useRef<HTMLDivElement>(null)
+
+  // Expose swipe function to parent
+  useEffect(() => {
+    if (onSwipeRef) {
+      onSwipeRef(() => {
+        // Swipe by 600px to the left
+        setDragX((prev) => Math.max(dragConstraint, prev - 600))
+      })
+    }
+  }, [onSwipeRef, dragConstraint])
 
   useEffect(() => {
     const calculateConstraints = () => {
@@ -143,6 +155,9 @@ const InteractiveImageBentoGallery: React.FC<
           drag="x"
           dragConstraints={{ left: dragConstraint, right: 0 }}
           dragElastic={0.05}
+          animate={{ x: dragX }}
+          onDragEnd={(e, info) => setDragX(dragX + info.offset.x)}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
           <motion.div
             ref={gridRef}
