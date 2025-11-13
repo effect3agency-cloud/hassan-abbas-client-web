@@ -1,4 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import signInstallation from "@/assets/sign-installation.jpg";
 import signManufacturing from "@/assets/sign-manufacturing.png";
 import designAndPermits from "@/assets/design-and-permits.jpg";
@@ -45,24 +52,38 @@ const Services = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl w-full">
-        {services.map((service, index) => (
-          <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
-            <CardHeader>
-              <CardTitle className="text-xl font-bold text-accent">{service.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-            </CardContent>
-          </Card>
-        ))}
+      <div className="w-full max-w-7xl px-12">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {services.map((service, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300">
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-accent">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );
