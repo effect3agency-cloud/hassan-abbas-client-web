@@ -71,7 +71,7 @@ interface CTAWithHorizontalMarqueeProps {
 
 export default function CTAWithHorizontalMarquee({ 
   headline = "Let your signboard do more than stand out, let it shine.",
-  description = "From eye-catching storefront signs to towering monument displays, we transform your brand vision into reality. Our expert team combines cutting-edge technology with traditional craftsmanship to create signage that doesn't just attract attention—it captivates, engages, and drives real results for your business."
+  description = "From eye catching storefront signs to towering monument displays, we transform your brand vision into reality. Our expert team combines cutting edge technology with traditional craftsmanship to create signage that doesn't just attract attention it captivates, engages, and drives real results for your business."
 }: CTAWithHorizontalMarqueeProps) {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
@@ -111,7 +111,7 @@ export default function CTAWithHorizontalMarquee({
         <div className="flex flex-col gap-12 lg:gap-16">
           {/* Top Content */}
           <div className="space-y-8 max-w-3xl mx-auto text-center px-6">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-accent animate-fade-in-up [animation-delay:200ms]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-accent animate-fade-in-up [animation-delay:200ms]">
               {headline}
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up [animation-delay:400ms]">
@@ -122,7 +122,7 @@ export default function CTAWithHorizontalMarquee({
                 <span className="relative z-10">NEW SIGN REQUEST</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
               </button>
-              <button className="group relative px-6 py-3 bg-secondary text-secondary-foreground rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg border border-border">
+              <button className="group relative px-6 py-3 bg-muted text-muted-foreground rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg border border-border">
                 <span className="relative z-10">BOOK A DEMO CALL</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
               </button>
@@ -136,7 +136,7 @@ export default function CTAWithHorizontalMarquee({
                 {marqueeItems.map((item, idx) => (
                   <div
                     key={idx}
-                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight px-12 marquee-item-horizontal whitespace-nowrap"
+                    className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light tracking-tight px-12 marquee-item-horizontal whitespace-nowrap"
                   >
                     {item}
                   </div>
