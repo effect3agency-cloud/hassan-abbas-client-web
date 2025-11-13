@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import HowWeWork from "@/components/HowWeWork";
 import Portfolio from "@/components/Portfolio";
 import OurStory from "@/components/OurStory";
+import ServiceCards from "@/components/ServiceCards";
 import { UpgradeBanner } from "@/components/ui/upgrade-banner";
 import showcaseImage from "@/assets/showcase-image.png";
 import { useState } from "react";
@@ -97,6 +98,9 @@ const Index = () => {
 
       {/* Our Story Section */}
       <OurStory />
+
+      {/* Service Cards Section */}
+      <ServiceCards />
 
       {/* CTA Section */}
       <CTASection />
