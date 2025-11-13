@@ -1,6 +1,7 @@
 import HeroSignboard from "@/components/HeroSignboard";
 import Navigation from "@/components/Navigation";
 import Testimonials from "@/components/Testimonials";
+import OurWork from "@/components/OurWork";
 import showcaseImage from "@/assets/showcase-image.png";
 
 const Index = () => {
@@ -17,6 +18,9 @@ const Index = () => {
           className="w-full h-auto object-cover"
         />
       </section>
+
+      {/* Our Work Section */}
+      <OurWork />
 
       {/* Testimonials Section */}
       <Testimonials />
