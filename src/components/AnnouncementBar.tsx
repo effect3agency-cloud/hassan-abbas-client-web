@@ -17,7 +17,7 @@ const AnnouncementBar = ({ onClose }: AnnouncementBarProps) => {
             x: ["0%", "-50%"],
           }}
           transition={{
-            duration: 50,
+            duration: 80,
             repeat: Infinity,
             ease: "linear",
           }}
