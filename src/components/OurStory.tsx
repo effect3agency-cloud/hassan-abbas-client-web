@@ -2,12 +2,12 @@ import ourStoryImage from "@/assets/our-story.jpg";
 
 const OurStory = () => {
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-background">
+    <section id="our-story" className="w-full py-16 md:py-24 px-6 bg-background">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-primary">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500">
               Our Story
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">

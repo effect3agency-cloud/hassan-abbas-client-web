@@ -9,6 +9,11 @@ All colors MUST be HSL.
 /* Smooth scrolling for all anchor links */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Offset for smooth scroll to account for sticky header */

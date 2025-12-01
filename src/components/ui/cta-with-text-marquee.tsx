@@ -124,7 +124,7 @@ export default function CTAWithHorizontalMarquee({
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
               </button>
               <button className="group relative px-6 py-3 rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg border border-[#263c4b]" style={{ backgroundColor: '#263c4b', color: 'white' }}>
-                <span className="relative z-10">BOOK A DEMO CALL</span>
+                <span className="relative z-10">PRINTING & GRAPHICS</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
               </button>
             </div>

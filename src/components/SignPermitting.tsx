@@ -1,6 +1,5 @@
 import permitInspection from "@/assets/permit-inspection.jpg";
 import permitProcessing from "@/assets/permit-processing.jpg";
-import { Badge } from "@/components/ui/badge";
 
 const SignPermitting = () => {
   return (
@@ -8,12 +7,7 @@ const SignPermitting = () => {
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Badge variant="default" className="bg-primary text-primary-foreground border-primary">
-              Premium Service
-            </Badge>
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500">
             Why Choose Us?
           </h2>
         </div>
@@ -60,52 +54,37 @@ const SignPermitting = () => {
             </div>
 
             {/* Body Text */}
-            <div className="space-y-4">
-              <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                Many cities and municipalities require permits for exterior signs. We'll take care of the process for you so your sign can go up without a hitch.
-              </p>
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-accent">Decades of Experience</h3>
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
+                  With a proven track record serving thousands of satisfied clients, we bring unmatched expertise to every project.
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-accent">Complete Sign Permitting</h3>
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
+                  Many cities require permits for exterior signs. We handle the entire permitting process so your sign goes up without a hitch.
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-accent">Marketing Integration</h3>
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
+                  Beyond signs, we offer digital marketing, website design, and social media services to amplify your brand across all channels.
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-accent">Premium Quality</h3>
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
+                  We use only high-grade materials and professional craftsmanship to ensure your signage stands the test of time.
+                </p>
+              </div>
             </div>
 
-            {/* Decorative Arrow - Points to contact section */}
-            <div className="hidden lg:block mt-8">
-              <a href="#contact-us" className="inline-block group">
-                <svg 
-                  className="w-32 h-32 text-primary group-hover:text-primary/80 transition-colors animate-bounce" 
-                  viewBox="0 0 100 120" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* Curved arrow path */}
-                  <path 
-                    d="M50 10 L50 90" 
-                    stroke="currentColor" 
-                    strokeWidth="4" 
-                    strokeLinecap="round"
-                    fill="none"
-                  />
-                  {/* Arrow head */}
-                  <path 
-                    d="M35 75 L50 90 L65 75" 
-                    stroke="currentColor" 
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                  />
-                  {/* Contact text hint */}
-                  <text 
-                    x="50" 
-                    y="110" 
-                    textAnchor="middle" 
-                    fill="currentColor" 
-                    fontSize="12" 
-                    fontWeight="600"
-                  >
-                    Contact Us
-                  </text>
-                </svg>
-              </a>
-            </div>
+
           </div>
         </div>
       </div>

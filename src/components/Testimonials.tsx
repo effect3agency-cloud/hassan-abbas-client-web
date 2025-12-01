@@ -36,7 +36,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-background my-20 relative overflow-hidden">
+    <section id="testimonials" className="bg-background my-20 relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url(/src/assets/signboard-texture.jpg)', backgroundSize: '600px 600px', backgroundRepeat: 'repeat' }}></div>
       <div className="container z-10 mx-auto relative">
         <motion.div
@@ -46,11 +46,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
-          <div className="flex justify-center">
-            <div className="border border-accent text-accent py-1 px-4 rounded-lg">Our Client</div>
-          </div>
-
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5 text-accent">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-orange-500 mb-5">
             What Our Clients Say
           </h2>
           <p className="text-center mt-5 opacity-75">

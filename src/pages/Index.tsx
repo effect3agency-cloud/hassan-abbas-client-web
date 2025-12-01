@@ -10,8 +10,9 @@ import OurStory from "@/components/OurStory";
 import PremiumServices from "@/components/PremiumServices";
 import SignPermitting from "@/components/SignPermitting";
 import ContactUs from "@/components/ContactUs";
+import MapLocation from "@/components/MapLocation";
 import Footer from "@/components/Footer";
-import { UpgradeBanner } from "@/components/ui/upgrade-banner";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import showcaseImage from "@/assets/showcase-image.png";
 import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
@@ -61,6 +62,11 @@ const Index = () => {
   
   return (
     <div className="relative">
+      {/* Fixed Announcement Bar */}
+      {showBanner && (
+        <AnnouncementBar onClose={() => setShowBanner(false)} />
+      )}
+      
       {/* Global 3D Grid Background */}
       <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
         <div className="absolute inset-0 w-full h-full">
@@ -77,18 +83,9 @@ const Index = () => {
       </div>
       
       {/* Content with higher z-index */}
-      <div className="relative z-10">
-        {showBanner && (
-        <div className="w-full bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/30 border-b-2 border-orange-200 dark:border-orange-800">
-          <UpgradeBanner 
-            buttonText="Black Friday Season Sale:"
-            description="Get your first signboard with a 30% service charge discount."
-            onClose={() => setShowBanner(false)}
-          />
-        </div>
-      )}
-      <Navigation />
-      <HeroSignboard />
+      <div className="relative z-10 pt-12">
+        <Navigation showBanner={showBanner} />
+        <HeroSignboard />
       
       {/* Image Section */}
       <section className="w-full">
@@ -128,6 +125,9 @@ const Index = () => {
 
       {/* Contact Us Section */}
       <ContactUs />
+
+      {/* Map Location Section */}
+      <MapLocation />
 
       {/* Footer Section */}
       <Footer />

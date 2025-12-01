@@ -1,5 +1,3 @@
-import { Badge } from "@/components/ui/badge";
-
 const ContactUs = () => {
   const contacts = [
     {
@@ -7,24 +5,21 @@ const ContactUs = () => {
       role: "Sales & Marketing",
       phone: "832 970-2805",
       email: "Habbas7725@gmail.com",
-      image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=100",
-      badge: "Manager"
+      image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=100"
     },
     {
       name: "Sarah Johnson",
       role: "Customer Support",
       phone: "832 555-0123",
       email: "support@precisionsigns.com",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&h=100&auto=format&fit=crop",
-      badge: "Support"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&h=100&auto=format&fit=crop"
     },
     {
       name: "Michael Chen",
       role: "Project Manager",
       phone: "832 555-0199",
       email: "projects@precisionsigns.com",
-      image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100",
-      badge: "Manager"
+      image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100"
     }
   ];
 
@@ -33,16 +28,11 @@ const ContactUs = () => {
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Badge variant="default" className="bg-primary text-primary-foreground border-primary">
-              Contact Us
-            </Badge>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500 mb-4">
             Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our team is here to help you with your signage needs. Reach out to us directly.
+            Our team is here to help you with all your needs. Reach out to us directly.
           </p>
         </div>
 
@@ -52,12 +42,7 @@ const ContactUs = () => {
             <div key={index} className="text-sm text-muted-foreground w-80 divide-y divide-border border border-border rounded-lg bg-card shadow-lg">
               <div className="flex items-start justify-between p-4">
                 <div>
-                  <div className="flex items-center space-x-2 mb-1">
-                    <h3 className="text-lg text-foreground font-semibold">{contact.name}</h3>
-                    <Badge variant="default" className="text-xs">
-                      {contact.badge}
-                    </Badge>
-                  </div>
+                  <h3 className="text-lg text-foreground font-semibold mb-1">{contact.name}</h3>
                   <p className="text-muted-foreground">{contact.role}</p>
                 </div>
                 <img 

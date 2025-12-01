@@ -51,7 +51,7 @@ const Footer = () => {
             <div className="space-y-2 pt-2">
               <div className="flex items-start gap-2 text-sm text-white/90">
                 <MapPin className="h-4 w-4 mt-0.5 text-orange-500 flex-shrink-0" />
-                <span>Texas, United States</span>
+                <span>9476 Hwy 6 South, Houston, TX 77083</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-white/90">
                 <Phone className="h-4 w-4 text-orange-500 flex-shrink-0" />
@@ -118,13 +118,17 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-lg bg-gray-700 border border-gray-600 hover:bg-orange-500 transition-all hover:scale-110 hover:shadow-md group"
-                    aria-label={social.name}
+                    aria-label={`Follow us on ${social.name}`}
+                    title={`Follow us on ${social.name}`}
                   >
                     <Icon className="h-5 w-5 text-orange-500 group-hover:text-white transition-colors" />
                   </a>
                 );
               })}
             </div>
+            <p className="text-xs text-white/70 mt-3">
+              Working on social media? Connect with us on our platforms!
+            </p>
           </div>
         </div>
 
