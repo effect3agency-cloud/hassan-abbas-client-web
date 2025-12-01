@@ -55,7 +55,7 @@ const HeroSignboard = () => {
           className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black text-center leading-tight pointer-events-none"
         >
           Helping Businesses Stand Out{" "}
-          <span className="inline-block min-w-[240px] text-left text-accent">
+          <span className="block md:inline-block text-center md:text-left" style={{ color: '#f97316' }}>
             {displayText}
             <span className="animate-pulse">|</span>
           </span>
