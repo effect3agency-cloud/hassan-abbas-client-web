@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
@@ -21,10 +21,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "https://facebook.com", color: "hover:text-blue-600" },
-    { name: "Instagram", icon: Instagram, href: "https://instagram.com", color: "hover:text-pink-600" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com", color: "hover:text-blue-700" },
-    { name: "Twitter", icon: Twitter, href: "https://twitter.com", color: "hover:text-blue-400" },
+    { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/profile.php?id=61584366973268", color: "hover:text-blue-600" },
+    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/precisionsignsandmedia/", color: "hover:text-pink-600" },
   ];
 
   return (
@@ -61,8 +59,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-sm text-white/90">
                 <Mail className="h-4 w-4 text-orange-500 flex-shrink-0" />
-                <a href="mailto:Habbas7725@gmail.com" className="hover:text-orange-500 transition-colors">
-                  Habbas7725@gmail.com
+                <a href="mailto:info@precisionsignsmedia.com" className="hover:text-orange-500 transition-colors">
+                  info@precisionsignsmedia.com
                 </a>
               </div>
             </div>
@@ -134,18 +132,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-white/80 text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+            <p className="text-sm text-white/80 text-center">
               © {currentYear} Precision Media & Signs. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-sm text-white/80 hover:text-orange-500 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-sm text-white/80 hover:text-orange-500 transition-colors">
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
       </div>

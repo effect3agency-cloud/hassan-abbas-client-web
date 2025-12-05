@@ -45,7 +45,7 @@ const SignPermitting = () => {
             {/* Title */}
             <div className="space-y-2">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                <span className="text-[#C84B31]">SIGN</span>{" "}
+                <span className="text-orange-500">SIGN</span>{" "}
                 <span className="text-[#2D4263]">PERMITTING</span>
               </h2>
               <p className="text-2xl md:text-3xl italic text-muted-foreground font-serif">

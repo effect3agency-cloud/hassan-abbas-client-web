@@ -1,4 +1,118 @@
+import { useState } from "react";
+
 const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+
+  const validateEmail = (value: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!value) {
+      setEmailError("");
+    } else if (!emailRegex.test(value)) {
+      setEmailError("Please enter a valid email address");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const formatPhoneNumber = (value: string) => {
+    // Remove all non-digit characters except + at the start
+    const cleaned = value.replace(/[^\d+]/g, "");
+    
+    // Only allow + at the beginning
+    const phoneNumber = cleaned.startsWith('+') 
+      ? '+' + cleaned.slice(1).replace(/\+/g, '')
+      : cleaned.replace(/\+/g, '');
+    
+    // Format as +1 (XXX) XXX-XXXX
+    if (phoneNumber.length === 0) {
+      return "";
+    } else if (phoneNumber.startsWith('+')) {
+      const digits = phoneNumber.slice(1);
+      if (digits.length === 0) {
+        return "+";
+      } else if (digits.length === 1) {
+        return `+${digits}`;
+      } else if (digits.length <= 4) {
+        return `+${digits.slice(0, 1)} (${digits.slice(1)}`;
+      } else if (digits.length <= 7) {
+        return `+${digits.slice(0, 1)} (${digits.slice(1, 4)}) ${digits.slice(4)}`;
+      } else {
+        return `+${digits.slice(0, 1)} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 11)}`;
+      }
+    } else {
+      // If no + prefix, format without country code
+      if (phoneNumber.length <= 3) {
+        return `(${phoneNumber}`;
+      } else if (phoneNumber.length <= 6) {
+        return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+      } else {
+        return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+      }
+    }
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneNumber(e.target.value);
+    setPhone(formatted);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate email before submitting
+    if (emailError || !email) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("http://localhost:5678/webhook/hassan-onboarding", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          company,
+          email,
+          phone,
+          subject,
+          message,
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        // Reset form
+        setName("");
+        setCompany("");
+        setEmail("");
+        setPhone("");
+        setSubject("");
+        setMessage("");
+        setEmailError("");
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contacts = [
     {
       name: "Hassan Abbas",
@@ -32,11 +146,127 @@ const ContactUs = () => {
             Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our team is here to help you with all your needs. Reach out to us directly.
+            We'd love to hear from you! Please fill out the form below or reach out to us directly.
           </p>
         </div>
 
+        {/* Contact Form */}
+        <div className="max-w-2xl mx-auto mb-16">
+          {submitStatus === "success" && (
+            <div className="mb-4 p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg">
+              Thank you! Your message has been sent successfully. We'll get back to you soon.
+            </div>
+          )}
+          {submitStatus === "error" && (
+            <div className="mb-4 p-4 bg-red-50 border border-red-200 text-red-800 rounded-lg">
+              Oops! Something went wrong. Please try again or contact us directly.
+            </div>
+          )}
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-5"
+          >
+            <div className="flex flex-col items-center gap-y-5 gap-x-6 [&>*]:w-full sm:flex-row">
+              <div>
+                <label className="font-medium text-foreground">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full mt-2 px-3 py-2 text-foreground bg-background outline-none border border-border focus:border-orange-500 shadow-sm rounded-lg transition-colors"
+                />
+              </div>
+              <div>
+                <label className="font-medium text-foreground">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  className="w-full mt-2 px-3 py-2 text-foreground bg-background outline-none border border-border focus:border-orange-500 shadow-sm rounded-lg transition-colors"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="font-medium text-foreground">
+                Email
+              </label>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  validateEmail(e.target.value);
+                }}
+                className={`w-full mt-2 px-3 py-2 text-foreground bg-background outline-none border ${emailError ? 'border-red-500' : 'border-border'} focus:border-orange-500 shadow-sm rounded-lg transition-colors`}
+              />
+              {emailError && (
+                <p className="text-red-500 text-sm mt-1">{emailError}</p>
+              )}
+            </div>
+            <div>
+              <label className="font-medium text-foreground">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                placeholder="(555) 000-0000"
+                required
+                value={phone}
+                onChange={handlePhoneChange}
+                maxLength={18}
+                className="w-full mt-2 px-3 py-2 bg-background text-foreground outline-none border border-border focus:border-orange-500 shadow-sm rounded-lg transition-colors"
+              />
+            </div>
+            <div>
+              <label className="font-medium text-foreground">
+                Subject
+              </label>
+              <input
+                type="text"
+                required
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                className="w-full mt-2 px-3 py-2 text-foreground bg-background outline-none border border-border focus:border-orange-500 shadow-sm rounded-lg transition-colors"
+              />
+            </div>
+            <div>
+              <label className="font-medium text-foreground">
+                Message
+              </label>
+              <textarea 
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full mt-2 h-36 px-3 py-2 resize-none bg-background outline-none border border-border focus:border-orange-500 shadow-sm rounded-lg transition-colors text-foreground"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              disabled={isSubmitting || !!emailError}
+              className="w-full px-4 py-3 text-white font-medium bg-orange-500 hover:bg-orange-600 active:bg-orange-700 disabled:bg-gray-400 disabled:cursor-not-allowed rounded-lg duration-150 shadow-md"
+            >
+              {isSubmitting ? "Sending..." : "Submit"}
+            </button>
+          </form>
+        </div>
+
         {/* Contact Cards */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+            Or Contact Our Team Directly
+          </h3>
+          <p className="text-muted-foreground">
+            Our team is ready to assist you with any questions.
+          </p>
+        </div>
+        
         <div className="flex flex-wrap items-center justify-center gap-6">
           {contacts.map((contact, index) => (
             <div key={index} className="text-sm text-muted-foreground w-80 divide-y divide-border border border-border rounded-lg bg-card shadow-lg">

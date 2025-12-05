@@ -119,14 +119,14 @@ export default function CTAWithHorizontalMarquee({
               {description}
             </p>
             <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up [animation-delay:600ms]">
-              <button className="group relative px-6 py-3 bg-accent text-accent-foreground rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg">
+              <a href="#contact-us" className="group relative px-6 py-3 bg-accent text-accent-foreground rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg inline-block">
                 <span className="relative z-10">NEW SIGN REQUEST</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-              </button>
-              <button className="group relative px-6 py-3 rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg border border-[#263c4b]" style={{ backgroundColor: '#263c4b', color: 'white' }}>
+              </a>
+              <a href="#contact-us" className="group relative px-6 py-3 rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg border border-[#263c4b] inline-block" style={{ backgroundColor: '#263c4b', color: 'white' }}>
                 <span className="relative z-10">PRINTING & GRAPHICS</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-              </button>
+              </a>
             </div>
           </div>
 
