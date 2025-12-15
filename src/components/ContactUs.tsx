@@ -1,4 +1,5 @@
 import { useState } from "react";
+import hassanAbbasImage from "../assets/Hassan abbas.jpeg";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -117,9 +118,9 @@ const ContactUs = () => {
     {
       name: "Hassan Abbas",
       role: "Sales & Marketing",
-      phone: "832 970-2805",
-      email: "Habbas7725@gmail.com",
-      image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=100"
+      phone: "+1 (832) 970-2805",
+      email: "info@precisionsignsmedia.com",
+      image: hassanAbbasImage
     },
     {
       name: "Sarah Johnson",

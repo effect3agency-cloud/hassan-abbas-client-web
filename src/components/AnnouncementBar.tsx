@@ -27,7 +27,7 @@ const AnnouncementBar = ({ onClose }: AnnouncementBarProps) => {
             <span key={groupIndex} className="inline-flex">
               {[...Array(8)].map((_, i) => (
                 <span key={i} className="text-orange-500 text-sm px-8">
-                  <span className="font-bold">Black Friday Season Sale:</span> Get your first service with a 30% service charge discount.
+                  <span className="font-bold">Get 10% off with first signup with Precision signs</span>
                 </span>
               ))}
             </span>
